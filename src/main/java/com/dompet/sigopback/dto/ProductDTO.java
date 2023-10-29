@@ -22,6 +22,4 @@ public class ProductDTO {
     public Boolean isActive ;
 
     public Catalog catalog;
-
-    public User user;
 }

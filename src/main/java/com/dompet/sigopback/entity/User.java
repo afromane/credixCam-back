@@ -33,7 +33,7 @@ public class User implements UserDetails {
     public  Role role;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority("ROL"+ this.role.getLabel()));
+        return Collections.singletonList(new SimpleGrantedAuthority("ROL_"+ this.role.getLabel()));
     }
 
     @Override

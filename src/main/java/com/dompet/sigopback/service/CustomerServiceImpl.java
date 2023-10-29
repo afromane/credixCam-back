@@ -1,6 +1,5 @@
 package com.dompet.sigopback.service;
 
-import com.dompet.sigopback.entity.Command;
 import com.dompet.sigopback.entity.Customer;
 import com.dompet.sigopback.exception.EntityNotFoundException;
 import com.dompet.sigopback.repository.CustomerRepository;
@@ -16,8 +15,6 @@ import java.util.Optional;
 public class CustomerServiceImpl  implements  CustomerService{
     @Autowired
     private final CustomerRepository customerRepository;
-
-
     public void create(Customer customer) {
         this.customerRepository.save(customer);
     }
