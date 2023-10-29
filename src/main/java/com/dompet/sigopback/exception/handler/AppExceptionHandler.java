@@ -1,8 +1,8 @@
 package com.dompet.sigopback.exception.handler;
 
-import com.dompet.tontineonline.exception.EntityAlreadyExistsException;
-import com.dompet.tontineonline.exception.EntityNotFoundException;
-import com.dompet.tontineonline.exception.message.ErrorEntity;
+import com.dompet.sigopback.exception.EntityAlreadyExistsException;
+import com.dompet.sigopback.exception.EntityNotFoundException;
+import com.dompet.sigopback.exception.message.ErrorEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

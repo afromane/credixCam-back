@@ -1,9 +1,12 @@
 package com.dompet.sigopback.service;
-
-
 import com.dompet.sigopback.entity.User;
+
+import java.util.List;
 
 public interface UserService   {
 
-    public void create(User user);
+     void create(User user);
+
+     List<User> findAll();
+     User findByEmail(String email);
 }

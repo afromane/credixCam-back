@@ -1,6 +1,6 @@
 package com.dompet.sigopback.security;
 
-import com.dompet.tontineonline.security.jwt.JwtAuthenticationFilter;
+import com.dompet.sigopback.security.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +29,7 @@ public class SecurityConfig {
                         .csrf(AbstractHttpConfigurer::disable)
                         .authorizeHttpRequests(
                                 authorize->authorize
-                                        .requestMatchers(POST,"/api/v1/user/**").permitAll()
+                                        .requestMatchers(POST,"/api/v1/user/").permitAll()
                                         .requestMatchers(POST,"/api/v1/auth/authenticate").permitAll()
                                         .anyRequest().authenticated()
                         )

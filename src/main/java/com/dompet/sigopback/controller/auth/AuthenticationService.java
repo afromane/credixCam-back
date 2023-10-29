@@ -1,8 +1,8 @@
 package com.dompet.sigopback.controller.auth;
 
-import com.dompet.tontineonline.dto.AuthentificationDTO;
-import com.dompet.tontineonline.repository.UserRepository;
-import com.dompet.tontineonline.security.jwt.JwtService;
+import com.dompet.sigopback.dto.AuthentificationDTO;
+import com.dompet.sigopback.repository.UserRepository;
+import com.dompet.sigopback.security.jwt.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

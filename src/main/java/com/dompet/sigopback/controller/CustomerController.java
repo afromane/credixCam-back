@@ -1,9 +1,12 @@
 package com.dompet.sigopback.controller;
 
 import com.dompet.sigopback.dto.CatalogDTO;
+import com.dompet.sigopback.dto.CustomerDTO;
 import com.dompet.sigopback.entity.Catalog;
+import com.dompet.sigopback.entity.Customer;
 import com.dompet.sigopback.exception.message.SuccessMessage;
 import com.dompet.sigopback.service.CatalogService;
+import com.dompet.sigopback.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,18 +17,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/v1/catalog/")
-public class CatalogController {
+@RequestMapping("/api/v1/customer/")
+public class CustomerController {
 
     @Autowired
     private ModelMapper modelMapper;
 
     @Autowired
-    private CatalogService catalogService;
+    private CustomerService customerService;
 
     @PostMapping()
-    public ResponseEntity<Object> create (@RequestBody Catalog catalog){
-        this.catalogService.create(catalog);
+    public ResponseEntity<Object> create (@RequestBody Customer customer){
+        this.customerService.create(customer);
         SuccessMessage successMessage = SuccessMessage.builder()
                 .code(201).message("record successfully")
                 .build();
@@ -33,17 +36,16 @@ public class CatalogController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<CatalogDTO>> findAll(){
-        return new ResponseEntity<>( this.catalogService.findAll()
+    public ResponseEntity<List<CustomerDTO>> findAll(){
+        return new ResponseEntity<>( this.customerService.findAll()
                 .stream()
-                .map(catalog -> modelMapper.map(catalog,CatalogDTO.class))
+                .map(customer -> modelMapper.map(customer,CustomerDTO.class))
                 .collect(Collectors.toList()),HttpStatus.OK );
     }
     @GetMapping("{id}")
-    public ResponseEntity<CatalogDTO> findById(@PathVariable Long id){
+    public ResponseEntity<CustomerDTO> findById(@PathVariable Long id){
         return new ResponseEntity<>(
-                modelMapper.map(this.catalogService.findById(id),CatalogDTO.class),
+                modelMapper.map(this.customerService.findById(id),CustomerDTO.class),
                 HttpStatus.OK);
     }
-
 }

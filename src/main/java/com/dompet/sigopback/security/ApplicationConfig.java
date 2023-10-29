@@ -1,6 +1,6 @@
 package com.dompet.sigopback.security;
 
-import com.dompet.tontineonline.repository.UserRepository;
+import com.dompet.sigopback.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

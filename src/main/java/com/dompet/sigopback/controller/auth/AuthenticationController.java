@@ -1,6 +1,6 @@
 package com.dompet.sigopback.controller.auth;
 
-import com.dompet.tontineonline.dto.AuthentificationDTO;
+import com.dompet.sigopback.dto.AuthentificationDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
