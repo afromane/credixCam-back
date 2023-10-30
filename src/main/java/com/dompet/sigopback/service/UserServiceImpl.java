@@ -31,9 +31,9 @@ public class UserServiceImpl  implements  UserService {
             throw  new RuntimeException("Your email is already used");
         }
        user.setPassword(this.passwordEncoder.encode(user.getPassword()));
-        Role userRole = new Role();
+        /*Role userRole = new Role();
         userRole.setLabel(RoleEnum.ADMINISTRATOR);
-        user.setRole(userRole);
+        user.setRole(userRole);*/
         this.userRepository.save(user);
 
     }

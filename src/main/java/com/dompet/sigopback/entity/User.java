@@ -28,8 +28,8 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private Boolean isActive = true;
-    @OneToOne(cascade = CascadeType.ALL)
 
+    @OneToOne
     public  Role role;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
