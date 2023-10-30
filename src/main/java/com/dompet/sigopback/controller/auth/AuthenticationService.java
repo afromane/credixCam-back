@@ -25,9 +25,13 @@ public class AuthenticationService {
             var user = this.userRepository.findByEmail(authentificationDTO.getUsername())
                     .orElseThrow();
             var jwtToken = jwtService.generateToken(user);
+            var jwtRefreshToken = jwtService.generateRefreshToken(user);
+            var expiration = jwtService.getExpirationTime(jwtToken);
             return AuthenticationResponse.builder()
                     .accessToken(jwtToken)
+                    .refreshToken(jwtRefreshToken)
                     .email(user.getEmail())
+                    .expiration(expiration)
                     .role(String.valueOf(user.role.label))
                     .build();
         }

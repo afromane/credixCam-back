@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -12,9 +14,10 @@ import lombok.NoArgsConstructor;
 public class AuthenticationResponse {
 
     public String accessToken ;
+    public String refreshToken;
+    public Date expiration ;
     public String role;
     public String email;
-    public String username;
 
 }
 
