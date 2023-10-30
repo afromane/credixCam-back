@@ -1,14 +1,13 @@
 package com.dompet.sigopback.repository;
 
-
-import com.dompet.sigopback.entity.User;
+import com.dompet.sigopback.entity.ValidationCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User,Long> {
+public interface ValidationCodeRepository extends JpaRepository<ValidationCode, Integer> {
 
-    Optional<User> findByEmail(String email);
+    Optional<ValidationCode> findByCode(String code);
 }
